@@ -9,17 +9,27 @@
 #------------------------------------------------------------
 
 #  flask関係
-from flask import Flask, render_template
+from flask import Flask, render_template, requests
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 
-@app.route('/')
+@app.route("/hello")
 def hello():
     return "Hello world!!"
 
-@app.route('/h')
-def index():
+@app.route("/test")
+def test():
     return render_template("test.html")
 
-if __name__ == '__main__':
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/result", methods=["POST"])
+def results():
+    return "results"
+
+if __name__ == "__main__":
     app.run()
