@@ -7,6 +7,8 @@ services:
       - ./app:/var/www/
     ports:
       - "3031:3031"
+    #expose:
+    #  - 3031
     environment:
       TZ: "Asia/Tokyo"
 
