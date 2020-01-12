@@ -20,7 +20,7 @@ Startボタンを押すと顔認識エンジンが起動。認識した画像は
     │   │   ├── server
     │   │   │   └── __init__.py
     │   │   ├── run.py
-    │   │   ├── templates
+    │   │   └── templates
     │   │       ├── index.html
     │   │       └── test.html
     │   └── uwsgi.ini
