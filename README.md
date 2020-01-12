@@ -7,29 +7,37 @@ Startボタンを押すと顔認識エンジンが起動。認識した画像は
 
 ## ファイル構成
     .
-    ├── run.sh
+    ├── Makefile
     ├── README.md
     ├── docker-compose.yml
     ├── app
     │   ├── Dockerfile
     │   ├── requirements.txt
     │   ├── src
+    │   │   ├── config
+    │   │   │   ├── __init__.py
+    │   │   │   └── default.py
+    │   │   ├── server
+    │   │   │   └── __init__.py
     │   │   ├── run.py
     │   │   ├── templates
-    │   │   │   ├── index.html
-    │   │   │   └── test.html
-    │   │   └── static
-    │   │       └── images
-    │   │           ├── img_before_xx.jpg
-    │   │           └── img_after_xx.jpg
+    │   │       ├── index.html
+    │   │       └── test.html
     │   └── uwsgi.ini
     └── nginx
+        ├── log
+        │   └── ...
         ├── Dockerfile
         └── nginx.conf
     
 ## コマンド(ver.make)
-
     #  実行
     $ make run
     #  停止
     $ make stop
+
+## コマンド(other)
+    #  実行
+    $ docker-compose up -d
+    #  停止
+    $ docker-compose down
